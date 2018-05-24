@@ -36,7 +36,7 @@ class BurritoListUITaTableViewController: UITableViewController {
         static let UnableToFindBurritosAlertBody = "You will have to look elsewhere for burritos"
         static let UnableToFindBurritosAlertButton = "Got it"
         
-        static let LocationSearchKeyword = ""
+        static let LocationSearchKeyword = "burrito"
     }
     
     
@@ -134,7 +134,7 @@ class BurritoListUITaTableViewController: UITableViewController {
                 return
             }
             
-            guard let nearbyPlaces = self?.pullPlaces(fromLikelihoods: places, withTypesToFind: [GMSPlaceTypes.Cafes, GMSPlaceTypes.Restaurants], withSearchTerm: nil) else {
+            guard let nearbyPlaces = self?.pullPlaces(fromLikelihoods: places, withTypesToFind: [GMSPlaceTypes.Cafes, GMSPlaceTypes.Restaurants], withSearchTerm: StringConstants.LocationSearchKeyword) else {
                 
                 let noBurritosAlert = UIAlertController(title: StringConstants.UnableToFindBurritosAlertTitle, message: StringConstants.UnableToFindBurritosAlertBody, preferredStyle: .alert)
                 noBurritosAlert.addAction(UIAlertAction(title: StringConstants.UnableToFindBurritosAlertButton, style: .cancel, handler: nil))
