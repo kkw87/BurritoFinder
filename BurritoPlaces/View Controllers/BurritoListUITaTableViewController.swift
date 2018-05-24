@@ -36,20 +36,10 @@ class BurritoListUITaTableViewController: UITableViewController, CLLocationManag
         static let UnableToFindBurritosAlertBody = "You will have to look elsewhere for burritos"
         static let UnableToFindBurritosAlertButton = "Got it"
         
-        static let LocationSearchKeyword = "burrito"
+        static let GooglePlacesTypeSearchTerms = "restaurant+food"
+        static let GooglePlacesKeywordSearchTerms = "mexican+burrito"
+
     }
-    
-    
-    private struct GMSPlaceTypes {
-        static let Restaurants = "restaurant"
-        static let Cafes = "cafe"
-        static let Takeout = "meal_takeaway"
-        static let Delivery = "meal_delivery"
-        static let Bar = "bar"
-        static let Bakery = "bakery"
-        static let Food = "food"
-    }
-    
     
     // MARK: - Model
     var nearbyRestaurants : [BurritoRestaurant] = []
@@ -87,6 +77,7 @@ class BurritoListUITaTableViewController: UITableViewController, CLLocationManag
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        locationManager.requestWhenInUseAuthorization()
         getNewLocations()
     }
     
@@ -116,90 +107,62 @@ class BurritoListUITaTableViewController: UITableViewController, CLLocationManag
             
             present(alert, animated: true, completion: nil)
             
-        case .notDetermined :
-            locationManager.requestWhenInUseAuthorization()
+            
         default:
-            break
+            locationManager.requestWhenInUseAuthorization()
         }
         
-        //Pull locations based on users location
-        getLocations()
+        locationManager.requestLocation()
         
     }
     
-    private func getLocations() {
+    private func queryForRestaurants(aroundLocation userCoordinate : CLLocationCoordinate2D) {
         
-        DispatchQueue.main.async {
-            UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        let userLocationLatitude = "\(userCoordinate.latitude)"
+        let userLocationLongitude = "\(userCoordinate.longitude)"
+        
+        guard let queryURL = URL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(userLocationLatitude),\(userLocationLongitude)&radius=1500&type=\(StringConstants.GooglePlacesTypeSearchTerms)&keyword=\(StringConstants.GooglePlacesKeywordSearchTerms)&key=\(AppDelegate.GooglePlacesAPIInfo.CurrentAPIKey)") else {
+            return
         }
         
-        placesClient.currentPlace { [weak self] (places, error) in
-            
-            self?.nearbyRestaurants = []
-            self?.tableView.refreshControl?.endRefreshing()
-            
-            guard error == nil else {
-                print(error!.localizedDescription)
-                return
-            }
-            
-            //Attempt to pull nearby places matching "types" along with a search keyword
-            guard let nearbyPlaces = self?.pullPlaces(fromLikelihoods: places, withTypesToFind: [GMSPlaceTypes.Cafes, GMSPlaceTypes.Restaurants, GMSPlaceTypes.Bakery, GMSPlaceTypes.Bar, GMSPlaceTypes.Delivery, GMSPlaceTypes.Food], withSearchTerm: StringConstants.LocationSearchKeyword) else {
-                
-                //If there are no locations, alert the user
-                let noBurritosAlert = UIAlertController(title: StringConstants.UnableToFindBurritosAlertTitle, message: StringConstants.UnableToFindBurritosAlertBody, preferredStyle: .alert)
-                noBurritosAlert.addAction(UIAlertAction(title: StringConstants.UnableToFindBurritosAlertButton, style: .cancel, handler: nil))
-                
-                self?.present(noBurritosAlert, animated: true, completion: nil)
-                return
-            }
-            
-            
-            for burritoRestaurant in nearbyPlaces {
-                
-                let newBurritoRestaurant = BurritoRestaurant(googlePlace: burritoRestaurant)
-                
-                self?.nearbyRestaurants.append(newBurritoRestaurant)
-            }
+        let urlSessionConfig = URLSessionConfiguration.default
+        urlSessionConfig.allowsCellularAccess = true
+        
+        let urlSession = URLSession(configuration: urlSessionConfig)
+        
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
+        let dataTask = urlSession.dataTask(with: queryURL, completionHandler: { (formData, response, error) in
             
             DispatchQueue.main.async {
-                self?.tableView.reloadData()
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                self.tableviewRefreshControl.endRefreshing()
             }
-        }
-    }
-    
-    // MARK: - Google places convenience functions
-    
-    private func pullPlaces(fromLikelihoods : GMSPlaceLikelihoodList?, withTypesToFind userTypes : [String], withSearchTerm searchTerm : String?) -> [GMSPlace]? {
-        
-        guard let likelihoodList = fromLikelihoods else {
-            return nil
-        }
 
-        //Pull out places from likelihoods, then find only the types user requested
-        var gmsPlaces = likelihoodList.likelihoods.compactMap {
-            $0.place
-            }.filter {
-                for type in userTypes {
-                    if $0.types.contains(type) {
-                        return true
-                    }
-                }
-                return false
-        }
-        
-        //Pull out only places that contain the entered keyword if it exists
-        if let keyword = searchTerm {
-            gmsPlaces = gmsPlaces.filter {
-                if $0.name.lowercased().contains(keyword.lowercased()) {
-                    return true
-                }
-                return false
+            guard error == nil else {
+                print("Error fetching locations: \(error!.localizedDescription) \n")
+                return
             }
-        }
+            
+            guard let placesData = formData else {
+                return
+            }
+            
+            guard let googleJSON = try? JSONDecoder().decode(GooglePlacesResponse.self, from: placesData) else {
+                return
+            }
+            DispatchQueue.main.async {
+                self.nearbyRestaurants = googleJSON.results.map {
+                    BurritoRestaurant(googlePlace: $0)
+                }
+                self.tableView.reloadData()
+            }
+            
+        })
         
-        return !gmsPlaces.isEmpty ? gmsPlaces : nil
+        DispatchQueue.global(qos: .userInitiated).async {
+            dataTask.resume()
+        }
     }
     
     // MARK: - Table view data source
@@ -233,10 +196,22 @@ class BurritoListUITaTableViewController: UITableViewController, CLLocationManag
         case .authorizedAlways :
             fallthrough
         case .authorizedWhenInUse :
-            getLocations()
+            locationManager.requestLocation()
         default :
             break
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error.localizedDescription)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        //Get current location!
+        guard let currentUsersLocation = locations.first?.coordinate else {
+            return
+        }
+        queryForRestaurants(aroundLocation: currentUsersLocation)
     }
     
     

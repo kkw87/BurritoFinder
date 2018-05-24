@@ -14,7 +14,7 @@ import GoogleMaps
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    private struct GooglePlacesAPIInfo {
+    struct GooglePlacesAPIInfo {
         static let CurrentAPIKey = "AIzaSyAL2yloqJEObqQgX4MzJnmGqj0R-fTGH7E"
     }
 

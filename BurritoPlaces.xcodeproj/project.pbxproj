@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4805959020B74120009D0C69 /* GooglePlacesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4805958F20B74120009D0C69 /* GooglePlacesResponseModel.swift */; };
 		4845533A20B50F020070E9D2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4845533920B50F020070E9D2 /* MapViewController.swift */; };
 		48D7FB0F20B4E9BF0037F6AB /* BurritoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D7FB0E20B4E9BF0037F6AB /* BurritoTableViewCell.swift */; };
 		48F7C24F20B485AE00260291 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F7C24E20B485AE00260291 /* AppDelegate.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		456A7E9033E2E3005C1AC6BF /* Pods-BurritoPlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BurritoPlaces.release.xcconfig"; path = "Pods/Target Support Files/Pods-BurritoPlaces/Pods-BurritoPlaces.release.xcconfig"; sourceTree = "<group>"; };
+		4805958F20B74120009D0C69 /* GooglePlacesResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GooglePlacesResponseModel.swift; path = BurritoPlaces/Model/GooglePlacesResponseModel.swift; sourceTree = SOURCE_ROOT; };
 		4845533920B50F020070E9D2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		48D7FB0E20B4E9BF0037F6AB /* BurritoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurritoTableViewCell.swift; sourceTree = "<group>"; };
 		48F7C24B20B485AE00260291 /* BurritoPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BurritoPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +92,7 @@
 		48F7C26720B4E72800260291 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4805958F20B74120009D0C69 /* GooglePlacesResponseModel.swift */,
 				48F7C26520B4E6C900260291 /* BurritoRestaurant.swift */,
 			);
 			path = Model;
@@ -246,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48F7C26220B4864F00260291 /* BurritoListUITaTableViewController.swift in Sources */,
+				4805959020B74120009D0C69 /* GooglePlacesResponseModel.swift in Sources */,
 				48F7C26620B4E6C900260291 /* BurritoRestaurant.swift in Sources */,
 				48F7C24F20B485AE00260291 /* AppDelegate.swift in Sources */,
 				4845533A20B50F020070E9D2 /* MapViewController.swift in Sources */,
