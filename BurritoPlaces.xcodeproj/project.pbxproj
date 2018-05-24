@@ -1,0 +1,454 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4845533A20B50F020070E9D2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4845533920B50F020070E9D2 /* MapViewController.swift */; };
+		48D7FB0F20B4E9BF0037F6AB /* BurritoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D7FB0E20B4E9BF0037F6AB /* BurritoTableViewCell.swift */; };
+		48F7C24F20B485AE00260291 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F7C24E20B485AE00260291 /* AppDelegate.swift */; };
+		48F7C25420B485AE00260291 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48F7C25220B485AE00260291 /* Main.storyboard */; };
+		48F7C25620B485AF00260291 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48F7C25520B485AF00260291 /* Assets.xcassets */; };
+		48F7C25920B485AF00260291 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48F7C25720B485AF00260291 /* LaunchScreen.storyboard */; };
+		48F7C26220B4864F00260291 /* BurritoListUITaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F7C26120B4864F00260291 /* BurritoListUITaTableViewController.swift */; };
+		48F7C26620B4E6C900260291 /* BurritoRestaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F7C26520B4E6C900260291 /* BurritoRestaurant.swift */; };
+		DB3EB37448722B7391C3C1F3 /* libPods-BurritoPlaces.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB42945154E4F46FF4D11F43 /* libPods-BurritoPlaces.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		456A7E9033E2E3005C1AC6BF /* Pods-BurritoPlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BurritoPlaces.release.xcconfig"; path = "Pods/Target Support Files/Pods-BurritoPlaces/Pods-BurritoPlaces.release.xcconfig"; sourceTree = "<group>"; };
+		4845533920B50F020070E9D2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		48D7FB0E20B4E9BF0037F6AB /* BurritoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurritoTableViewCell.swift; sourceTree = "<group>"; };
+		48F7C24B20B485AE00260291 /* BurritoPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BurritoPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		48F7C24E20B485AE00260291 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		48F7C25320B485AE00260291 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		48F7C25520B485AF00260291 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		48F7C25820B485AF00260291 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		48F7C25A20B485AF00260291 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48F7C26120B4864F00260291 /* BurritoListUITaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurritoListUITaTableViewController.swift; sourceTree = "<group>"; };
+		48F7C26520B4E6C900260291 /* BurritoRestaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurritoRestaurant.swift; sourceTree = "<group>"; };
+		88CC66C2A5EAEA18E2CA0F07 /* Pods-BurritoPlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BurritoPlaces.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BurritoPlaces/Pods-BurritoPlaces.debug.xcconfig"; sourceTree = "<group>"; };
+		FB42945154E4F46FF4D11F43 /* libPods-BurritoPlaces.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BurritoPlaces.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		48F7C24820B485AE00260291 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB3EB37448722B7391C3C1F3 /* libPods-BurritoPlaces.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		48F7C24220B485AE00260291 = {
+			isa = PBXGroup;
+			children = (
+				48F7C24D20B485AE00260291 /* BurritoPlaces */,
+				48F7C24C20B485AE00260291 /* Products */,
+				9BB409F55EB3608F1731A7C3 /* Pods */,
+				5E1CAD483651B068B186F375 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		48F7C24C20B485AE00260291 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				48F7C24B20B485AE00260291 /* BurritoPlaces.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		48F7C24D20B485AE00260291 /* BurritoPlaces */ = {
+			isa = PBXGroup;
+			children = (
+				48F7C26920B4E73D00260291 /* View Controllers */,
+				48F7C26820B4E73200260291 /* Views */,
+				48F7C26720B4E72800260291 /* Model */,
+				48F7C26020B4861F00260291 /* Supporting Files */,
+				48F7C25220B485AE00260291 /* Main.storyboard */,
+				48F7C25A20B485AF00260291 /* Info.plist */,
+			);
+			path = BurritoPlaces;
+			sourceTree = "<group>";
+		};
+		48F7C26020B4861F00260291 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				48F7C24E20B485AE00260291 /* AppDelegate.swift */,
+				48F7C25520B485AF00260291 /* Assets.xcassets */,
+				48F7C25720B485AF00260291 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		48F7C26720B4E72800260291 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				48F7C26520B4E6C900260291 /* BurritoRestaurant.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		48F7C26820B4E73200260291 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				48D7FB0E20B4E9BF0037F6AB /* BurritoTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		48F7C26920B4E73D00260291 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				48F7C26120B4864F00260291 /* BurritoListUITaTableViewController.swift */,
+				4845533920B50F020070E9D2 /* MapViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		5E1CAD483651B068B186F375 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB42945154E4F46FF4D11F43 /* libPods-BurritoPlaces.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9BB409F55EB3608F1731A7C3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				88CC66C2A5EAEA18E2CA0F07 /* Pods-BurritoPlaces.debug.xcconfig */,
+				456A7E9033E2E3005C1AC6BF /* Pods-BurritoPlaces.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		48F7C24A20B485AE00260291 /* BurritoPlaces */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48F7C25D20B485AF00260291 /* Build configuration list for PBXNativeTarget "BurritoPlaces" */;
+			buildPhases = (
+				B95D1CBA226954959DD4B5E0 /* [CP] Check Pods Manifest.lock */,
+				48F7C24720B485AE00260291 /* Sources */,
+				48F7C24820B485AE00260291 /* Frameworks */,
+				48F7C24920B485AE00260291 /* Resources */,
+				A0EEA544B5C8A2A4D785B44C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BurritoPlaces;
+			productName = BurritoPlaces;
+			productReference = 48F7C24B20B485AE00260291 /* BurritoPlaces.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		48F7C24320B485AE00260291 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Kevin Wang";
+				TargetAttributes = {
+					48F7C24A20B485AE00260291 = {
+						CreatedOnToolsVersion = 9.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 48F7C24620B485AE00260291 /* Build configuration list for PBXProject "BurritoPlaces" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 48F7C24220B485AE00260291;
+			productRefGroup = 48F7C24C20B485AE00260291 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				48F7C24A20B485AE00260291 /* BurritoPlaces */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		48F7C24920B485AE00260291 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48F7C25920B485AF00260291 /* LaunchScreen.storyboard in Resources */,
+				48F7C25620B485AF00260291 /* Assets.xcassets in Resources */,
+				48F7C25420B485AE00260291 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A0EEA544B5C8A2A4D785B44C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BurritoPlaces/Pods-BurritoPlaces-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlacePicker.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BurritoPlaces/Pods-BurritoPlaces-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B95D1CBA226954959DD4B5E0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BurritoPlaces-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		48F7C24720B485AE00260291 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48F7C26220B4864F00260291 /* BurritoListUITaTableViewController.swift in Sources */,
+				48F7C26620B4E6C900260291 /* BurritoRestaurant.swift in Sources */,
+				48F7C24F20B485AE00260291 /* AppDelegate.swift in Sources */,
+				4845533A20B50F020070E9D2 /* MapViewController.swift in Sources */,
+				48D7FB0F20B4E9BF0037F6AB /* BurritoTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		48F7C25220B485AE00260291 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48F7C25320B485AE00260291 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		48F7C25720B485AF00260291 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48F7C25820B485AF00260291 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		48F7C25B20B485AF00260291 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		48F7C25C20B485AF00260291 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		48F7C25E20B485AF00260291 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88CC66C2A5EAEA18E2CA0F07 /* Pods-BurritoPlaces.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C59S222Q28;
+				INFOPLIST_FILE = BurritoPlaces/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kkw.BurritoPlaces;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		48F7C25F20B485AF00260291 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 456A7E9033E2E3005C1AC6BF /* Pods-BurritoPlaces.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C59S222Q28;
+				INFOPLIST_FILE = BurritoPlaces/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kkw.BurritoPlaces;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		48F7C24620B485AE00260291 /* Build configuration list for PBXProject "BurritoPlaces" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48F7C25B20B485AF00260291 /* Debug */,
+				48F7C25C20B485AF00260291 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48F7C25D20B485AF00260291 /* Build configuration list for PBXNativeTarget "BurritoPlaces" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48F7C25E20B485AF00260291 /* Debug */,
+				48F7C25F20B485AF00260291 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 48F7C24320B485AE00260291 /* Project object */;
+}

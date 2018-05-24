@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jPF-tS-OLO">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Burrito Places-->
+        <scene sceneID="RlG-nu-hHa">
+            <objects>
+                <tableViewController id="STy-6i-pOo" customClass="BurritoListUITaTableViewController" customModule="BurritoPlaces" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="3d9-Cl-9Mm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="redraw" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Burrito Cell Identifier" rowHeight="120" id="Stl-PF-FEv" customClass="BurritoTableViewCell" customModule="BurritoPlaces" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Stl-PF-FEv" id="WnL-ZL-Jfa">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DL5-Ou-W0W">
+                                            <rect key="frame" x="16" y="11" width="342" height="98"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Lupe's East L.A. Kitchen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bbr-40-WbR">
+                                                    <rect key="frame" x="0.0" y="0.0" width="209.5" height="32.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                    <color key="textColor" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="166 W 4th Street" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5T-4R-jId">
+                                                    <rect key="frame" x="0.0" y="40.5" width="117" height="24.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$$  Budget burrito joint" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kU2-7c-dwQ">
+                                                    <rect key="frame" x="0.0" y="73" width="132.5" height="25"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYM-4P-NJa">
+                                            <rect key="frame" x="358" y="0.0" width="17" height="120"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="17" id="c8Q-dz-m1s"/>
+                                            </constraints>
+                                            <state key="normal" title="Button" image="Chevron"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="DL5-Ou-W0W" secondAttribute="bottom" id="5VG-5a-pVW"/>
+                                        <constraint firstAttribute="trailing" secondItem="cYM-4P-NJa" secondAttribute="trailing" id="Cct-H9-2lx"/>
+                                        <constraint firstAttribute="trailing" secondItem="cYM-4P-NJa" secondAttribute="trailing" id="F1O-SY-5nN"/>
+                                        <constraint firstItem="DL5-Ou-W0W" firstAttribute="leading" secondItem="WnL-ZL-Jfa" secondAttribute="leadingMargin" id="J7J-LV-U8K"/>
+                                        <constraint firstItem="cYM-4P-NJa" firstAttribute="leading" secondItem="DL5-Ou-W0W" secondAttribute="trailing" id="ZXe-P1-PqI"/>
+                                        <constraint firstItem="DL5-Ou-W0W" firstAttribute="top" secondItem="WnL-ZL-Jfa" secondAttribute="topMargin" id="epa-Xm-Rob"/>
+                                        <constraint firstAttribute="bottom" secondItem="cYM-4P-NJa" secondAttribute="bottom" id="jtZ-0j-HOs"/>
+                                        <constraint firstItem="cYM-4P-NJa" firstAttribute="top" secondItem="WnL-ZL-Jfa" secondAttribute="top" id="lUV-1R-fb0"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="addressLabel" destination="d5T-4R-jId" id="h3t-YC-aPi"/>
+                                    <outlet property="descriptionLabel" destination="kU2-7c-dwQ" id="6Eo-GI-f42"/>
+                                    <outlet property="titleLabel" destination="Bbr-40-WbR" id="8J7-h7-ZOP"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="Burrito Place Segue" id="Rzr-r5-xZl"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="STy-6i-pOo" id="jPn-uA-YJU"/>
+                            <outlet property="delegate" destination="STy-6i-pOo" id="lhL-4n-foW"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Burrito Places" id="gda-wA-K94"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y6a-7C-44j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="824.79999999999995" y="244.22788605697153"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="BurritoPlaces" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XX7-ig-eJU">
+                                <rect key="frame" x="10" y="79" width="355" height="573"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" verticalCompressionResistancePriority="800" translatesAutoresizingMaskIntoConstraints="NO" id="UPc-s2-QmH">
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="85"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDb-UD-Ff4">
+                                                <rect key="frame" x="8" y="48" width="339" height="21"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5K-yx-mrA">
+                                                <rect key="frame" x="8" y="8" width="339" height="32"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="cDb-UD-Ff4" firstAttribute="leading" secondItem="UPc-s2-QmH" secondAttribute="leading" constant="8" id="BVv-sc-nKG"/>
+                                            <constraint firstItem="cDb-UD-Ff4" firstAttribute="top" secondItem="C5K-yx-mrA" secondAttribute="bottom" constant="8" id="FD7-bb-JLS"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="85" id="RY4-76-4cc"/>
+                                            <constraint firstAttribute="trailing" secondItem="C5K-yx-mrA" secondAttribute="trailing" constant="8" id="SCH-Cs-6ld"/>
+                                            <constraint firstAttribute="trailing" secondItem="cDb-UD-Ff4" secondAttribute="trailing" constant="8" id="W1M-XE-dV8"/>
+                                            <constraint firstAttribute="bottom" secondItem="cDb-UD-Ff4" secondAttribute="bottom" constant="16" id="hbt-08-kDo"/>
+                                            <constraint firstItem="C5K-yx-mrA" firstAttribute="leading" secondItem="UPc-s2-QmH" secondAttribute="leading" constant="8" id="k8X-ZM-6Wm"/>
+                                            <constraint firstItem="C5K-yx-mrA" firstAttribute="top" secondItem="UPc-s2-QmH" secondAttribute="top" constant="8" id="r5l-N7-1CQ"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4B-nP-4Ab" customClass="GMSMapView">
+                                        <rect key="frame" x="0.0" y="85" width="355" height="488"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="UPc-s2-QmH" secondAttribute="trailing" id="0gO-Vn-3di"/>
+                                    <constraint firstItem="j4B-nP-4Ab" firstAttribute="leading" secondItem="XX7-ig-eJU" secondAttribute="leading" id="5d1-Uh-iLa"/>
+                                    <constraint firstItem="j4B-nP-4Ab" firstAttribute="top" secondItem="UPc-s2-QmH" secondAttribute="bottom" id="5sv-4X-2lU"/>
+                                    <constraint firstItem="UPc-s2-QmH" firstAttribute="leading" secondItem="XX7-ig-eJU" secondAttribute="leading" id="9uY-vL-QyZ"/>
+                                    <constraint firstItem="UPc-s2-QmH" firstAttribute="top" secondItem="XX7-ig-eJU" secondAttribute="top" id="Ptd-Ry-HBr"/>
+                                    <constraint firstItem="UPc-s2-QmH" firstAttribute="leading" secondItem="XX7-ig-eJU" secondAttribute="leading" id="SRg-8Q-1Jj"/>
+                                    <constraint firstItem="UPc-s2-QmH" firstAttribute="trailing" secondItem="j4B-nP-4Ab" secondAttribute="trailing" id="SgG-Vh-SJj"/>
+                                    <constraint firstAttribute="trailing" secondItem="j4B-nP-4Ab" secondAttribute="trailing" id="csy-bz-3EY"/>
+                                    <constraint firstAttribute="trailing" secondItem="UPc-s2-QmH" secondAttribute="trailing" id="h09-MR-v0A"/>
+                                    <constraint firstAttribute="bottom" secondItem="j4B-nP-4Ab" secondAttribute="bottom" id="mGi-VB-dYf"/>
+                                    <constraint firstAttribute="bottom" secondItem="j4B-nP-4Ab" secondAttribute="bottom" id="pIV-C2-n7K"/>
+                                    <constraint firstItem="UPc-s2-QmH" firstAttribute="leading" secondItem="j4B-nP-4Ab" secondAttribute="leading" id="rug-wU-sEx"/>
+                                    <constraint firstItem="UPc-s2-QmH" firstAttribute="top" secondItem="XX7-ig-eJU" secondAttribute="top" id="vJw-6d-jO0"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="XX7-ig-eJU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="4Z4-Ex-g62"/>
+                            <constraint firstItem="XX7-ig-eJU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="5d8-Tb-cgD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XX7-ig-eJU" secondAttribute="bottom" constant="15" id="d0v-Qp-leZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XX7-ig-eJU" secondAttribute="trailing" constant="10" id="gUE-3E-sfW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="C5K-yx-mrA" id="dvG-GJ-Z0K"/>
+                        <outlet property="containerView" destination="XX7-ig-eJU" id="Lru-pk-7qh"/>
+                        <outlet property="descriptionLabel" destination="cDb-UD-Ff4" id="xUf-Tn-MZ4"/>
+                        <outlet property="mapView" destination="j4B-nP-4Ab" id="aB5-zg-Rjc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1552.8" y="245.12743628185908"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hlh-oV-IX0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jPF-tS-OLO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vfK-rs-b9F">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="STy-6i-pOo" kind="relationship" relationship="rootViewController" id="gpq-lL-riz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tfr-UX-43z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-114.40000000000001" y="244.22788605697153"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Chevron" width="11" height="18"/>
+    </resources>
+</document>
