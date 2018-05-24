@@ -10,7 +10,7 @@ import UIKit
 import GooglePlaces
 
 
-class BurritoListUITaTableViewController: UITableViewController {
+class BurritoListUITaTableViewController: UITableViewController, CLLocationManagerDelegate {
     
     // MARK: - Constants
     
@@ -43,6 +43,11 @@ class BurritoListUITaTableViewController: UITableViewController {
     private struct GMSPlaceTypes {
         static let Restaurants = "restaurant"
         static let Cafes = "cafe"
+        static let Takeout = "meal_takeaway"
+        static let Delivery = "meal_delivery"
+        static let Bar = "bar"
+        static let Bakery = "bakery"
+        static let Food = "food"
     }
     
     
@@ -62,7 +67,11 @@ class BurritoListUITaTableViewController: UITableViewController {
         return pulldownRefresh
     }()
     
-    private var locationManager = CLLocationManager()
+    private lazy var locationManager : CLLocationManager = {
+       let locManager = CLLocationManager()
+        locManager.delegate = self
+        return locManager
+    }()
     
     
     // MARK: - VC Lifecycle
@@ -135,7 +144,7 @@ class BurritoListUITaTableViewController: UITableViewController {
             }
             
             //Attempt to pull nearby places matching "types" along with a search keyword
-            guard let nearbyPlaces = self?.pullPlaces(fromLikelihoods: places, withTypesToFind: [GMSPlaceTypes.Cafes, GMSPlaceTypes.Restaurants], withSearchTerm: StringConstants.LocationSearchKeyword) else {
+            guard let nearbyPlaces = self?.pullPlaces(fromLikelihoods: places, withTypesToFind: [GMSPlaceTypes.Cafes, GMSPlaceTypes.Restaurants, GMSPlaceTypes.Bakery, GMSPlaceTypes.Bar, GMSPlaceTypes.Delivery, GMSPlaceTypes.Food], withSearchTerm: StringConstants.LocationSearchKeyword) else {
                 
                 //If there are no locations, alert the user
                 let noBurritosAlert = UIAlertController(title: StringConstants.UnableToFindBurritosAlertTitle, message: StringConstants.UnableToFindBurritosAlertBody, preferredStyle: .alert)
@@ -167,7 +176,7 @@ class BurritoListUITaTableViewController: UITableViewController {
         guard let likelihoodList = fromLikelihoods else {
             return nil
         }
-        
+
         //Pull out places from likelihoods, then find only the types user requested
         var gmsPlaces = likelihoodList.likelihoods.compactMap {
             $0.place
@@ -218,6 +227,18 @@ class BurritoListUITaTableViewController: UITableViewController {
         return Constants.DefaultCellHeight
     }
     
+    // MARK: - CLLocationManager delegates
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedAlways :
+            fallthrough
+        case .authorizedWhenInUse :
+            getLocations()
+        default :
+            break
+        }
+    }
+    
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -245,29 +266,11 @@ class BurritoListUITaTableViewController: UITableViewController {
     }
 }
 
+
+
 extension UIViewController {
     var contentViewController : UIViewController {
         return self.navigationController?.visibleViewController ?? self
     }
 }
 
-
-extension GMSPlace {
-    var dollarSigns : String {
-        
-        switch priceLevel.rawValue {
-        case 0:
-            return "$"
-        case 1:
-            return "$$"
-        case 2:
-            return "$$$"
-        case 3:
-            return "$$$$"
-        case 4:
-            return "$$$$$"
-        default:
-            return ""
-        }
-    }
-}

@@ -31,15 +31,50 @@ struct BurritoRestaurant {
         //Format address just to have the street name
         let addressString = googlePlace.formattedAddress?.components(separatedBy: ", ").first ?? ""
         
-        //Description in spec sheet is not available in the places API, we currently set it to the locations website or a default text if it doesnt exist
-        let websiteString = googlePlace.website != nil ? "\(googlePlace.website!)" : Constants.DefaultDescriptionText
-        
         //Setup description that combines dollar sign amounts as well as the place description
-        let placeDescription = "\(googlePlace.dollarSigns) • \(websiteString)"
+        let placeDescription = "\(googlePlace.dollarSigns) • \(googlePlace.ratingSigns)"
         
         restaurantName = googlePlace.name
         restaurantAddress = addressString
         restaurantDescription = placeDescription
         restaurantCoordinates = googlePlace.coordinate
+    }
+}
+
+
+
+extension GMSPlace {
+    
+    var ratingSigns : String {
+        switch rating {
+        case 1.0:
+            return "★"
+        case 2.0 :
+            return "★★"
+        case 3.0 :
+            return "★★★"
+        case 4.0:
+            return "★★★★"
+        case 5.0:
+            return "★★★★★"
+        default:
+            return "No reviews"
+        }
+    }
+    
+    var dollarSigns : String {
+        
+        switch priceLevel.rawValue {
+        case 1:
+            return "$$"
+        case 2:
+            return "$$$"
+        case 3:
+            return "$$$$"
+        case 4:
+            return "$$$$$"
+        default:
+            return "$"
+        }
     }
 }
