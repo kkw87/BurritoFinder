@@ -134,8 +134,10 @@ class BurritoListUITaTableViewController: UITableViewController {
                 return
             }
             
+            //Attempt to pull nearby places matching "types" along with a search keyword
             guard let nearbyPlaces = self?.pullPlaces(fromLikelihoods: places, withTypesToFind: [GMSPlaceTypes.Cafes, GMSPlaceTypes.Restaurants], withSearchTerm: StringConstants.LocationSearchKeyword) else {
                 
+                //If there are no locations, alert the user
                 let noBurritosAlert = UIAlertController(title: StringConstants.UnableToFindBurritosAlertTitle, message: StringConstants.UnableToFindBurritosAlertBody, preferredStyle: .alert)
                 noBurritosAlert.addAction(UIAlertAction(title: StringConstants.UnableToFindBurritosAlertButton, style: .cancel, handler: nil))
                 
