@@ -12,7 +12,6 @@ class BurritoTableViewCell: UITableViewCell {
     
     // MARK: - Constants
     private struct Constants {
-        static let CellEdgePadding : CGFloat = 16
         static let RoundedCornerRadius : CGFloat = 10
     }
     
