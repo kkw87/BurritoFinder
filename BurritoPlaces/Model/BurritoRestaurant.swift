@@ -41,7 +41,7 @@ struct BurritoRestaurant {
     }
 }
 
-
+// MARK: - GMSPlace extensions
 
 extension GMSPlace {
     
